@@ -147,6 +147,10 @@ class BaseConverter(object):
         d['title'] = field.label.text
         if field.description != '':
             d['description'] = field.description
+
+        if field.data:
+            d['value'] = field.data
+
         return d, req
 
     def convert(self, form):
